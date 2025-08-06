@@ -16,7 +16,5 @@ Firstly you can clone by using the command below:
 git clone https://github.com/felipedpaula/plaque-detection-python-computer-vision.git
 ```
 
-Or download the zip file directly from [Github](https://github.com/BrunoUemura/CarPlate-Recognition.git) and unzip it.
-
 ### To run the project
 After the download is completed and the requirements are fulfilled, execute the file `./src/app.py`.
