@@ -1,0 +1,8 @@
+opencv-python
+matplotlib
+pytesseract
+gspread
+oauth2client
+numpy
+Pillow
+colorama
