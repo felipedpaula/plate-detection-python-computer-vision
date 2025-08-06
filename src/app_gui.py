@@ -69,11 +69,14 @@ class PlateRecognitionGUI:
             # Leitura de todas as linhas
             valores = sheet.get_all_values()
             
-            # Extrair placas da planilha (segunda coluna)
+            # Extrair placas da planilha (apenas veículos com status "ativo")
             self.authorized_plates = []
             for linha in valores[1:]:  # Pula o cabeçalho
-                if linha and len(linha) > 1 and linha[1]:
-                    self.authorized_plates.append(linha[1].strip().upper())
+                # Verifica se a linha tem pelo menos 6 colunas (id, placa, marca, modelo, responsavel, status)
+                if linha and len(linha) >= 6 and linha[1] and linha[5]:
+                    # Verifica se o status (coluna F, índice 5) é "ativo"
+                    if linha[5].strip().lower() == 'ativo':
+                        self.authorized_plates.append(linha[1].strip().upper())
             
         except Exception as e:
             self.authorized_plates = []
